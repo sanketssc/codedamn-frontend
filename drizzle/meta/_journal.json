@@ -1,0 +1,48 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1714568226795,
+      "tag": "0000_brief_serpent_society",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1714568324891,
+      "tag": "0001_marvelous_jack_power",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1714577447917,
+      "tag": "0002_misty_gressill",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1714577938193,
+      "tag": "0003_freezing_plazm",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1714578073096,
+      "tag": "0004_absent_eternity",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1714585721338,
+      "tag": "0005_youthful_vengeance",
+      "breakpoints": true
+    }
+  ]
+}

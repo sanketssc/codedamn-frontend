@@ -1,0 +1,1 @@
+ALTER TABLE "project" DROP CONSTRAINT "unique_project_user";
