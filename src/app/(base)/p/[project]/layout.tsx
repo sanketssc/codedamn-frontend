@@ -14,9 +14,7 @@ export default async function Layout({
   children,
   params: { project },
 }: {
-  children: Readonly<{
-    children: React.ReactNode;
-  }>;
+  children: React.ReactNode;
   params: { project: string };
 }) {
   console.log({ project });
