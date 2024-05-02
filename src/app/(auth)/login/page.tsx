@@ -6,6 +6,7 @@ import { lucia } from "@/auth";
 import { redirect } from "next/navigation";
 import { userTable } from "@/db/schema";
 import { eq } from "drizzle-orm";
+import Link from "next/link";
 
 interface ActionResult {
   error: string;
@@ -13,23 +14,36 @@ interface ActionResult {
 
 export default async function Page() {
   return (
-    <>
-      <h1>Create an account</h1>
-      <form action={login}>
+    <div className="flex flex-col justify-center w-full h-screen items-center gap-10">
+      <h1 className="text-3xl">Login to account</h1>
+      <form action={login} className="flex flex-col gap-5">
         <label htmlFor="username">Username</label>
-        <input className="bg-black p-1 border" name="username" id="username" />
-        <br />
+        <input
+          className="bg-black p-1 border"
+          name="username"
+          id="username"
+          minLength={3}
+          maxLength={31}
+          required
+        />
         <label htmlFor="password">Password</label>
         <input
           className="bg-black p-1 border"
           type="password"
           name="password"
           id="password"
+          minLength={6}
+          maxLength={255}
+          required
         />
-        <br />
-        <button>Continue</button>
+        <div>
+          <Link href="/signup">Don&apos;t have an account? Sign up here</Link>
+        </div>
+        <button className="border p-2 w-4/5 mx-auto rounded-md bg-blue-700">
+          Continue
+        </button>
       </form>
-    </>
+    </div>
   );
 }
 async function login(formData: FormData): Promise<ActionResult> {
@@ -60,7 +74,8 @@ async function login(formData: FormData): Promise<ActionResult> {
     .select()
     .from(userTable)
     .where(eq(userTable.username, username));
-  if (!existingUser) {
+  console.log({ existingUser });
+  if (existingUser.length === 0) {
     // NOTE:
     // Returning immediately allows malicious actors to figure out valid usernames from response times,
     // allowing them to only focus on guessing passwords in brute-force attacks.
@@ -75,7 +90,7 @@ async function login(formData: FormData): Promise<ActionResult> {
     };
   }
 
-  const validPassword = await verify(existingUser[0].password_hash, password, {
+  const validPassword = await verify(existingUser[0]?.password_hash, password, {
     memoryCost: 19456,
     timeCost: 2,
     outputLen: 32,

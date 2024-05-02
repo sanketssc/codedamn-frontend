@@ -5,6 +5,7 @@ import { lucia } from "@/auth";
 import { redirect } from "next/navigation";
 import { generateIdFromEntropySize } from "lucia";
 import { userTable } from "@/db/schema";
+import Link from "next/link";
 
 interface ActionResult {
   error: string;
@@ -12,23 +13,41 @@ interface ActionResult {
 
 export default async function Page() {
   return (
-    <>
-      <h1>Create an account</h1>
-      <form action={signup}>
+    <div className="flex flex-col justify-center w-full h-screen items-center gap-10">
+      <h1 className="text-3xl">Create an account</h1>
+      <form
+        action={signup}
+        className="
+        flex flex-col gap-5
+      "
+      >
         <label htmlFor="username">Username</label>
-        <input className="bg-black p-1 border" name="username" id="username" />
-        <br />
+        <input
+          className="bg-black p-1 border"
+          name="username"
+          id="username"
+          required
+          minLength={3}
+          maxLength={31}
+        />
         <label htmlFor="password">Password</label>
         <input
           className="bg-black p-1 border"
           type="password"
           name="password"
           id="password"
+          required
+          minLength={6}
+          maxLength={255}
         />
-        <br />
-        <button>Continue</button>
+        <div>
+          <Link href="/login">Already have an account? Login here</Link>
+        </div>
+        <button className="border p-2 w-4/5 mx-auto rounded-md bg-blue-700">
+          Continue
+        </button>
       </form>
-    </>
+    </div>
   );
 }
 async function signup(formData: FormData): Promise<ActionResult> {
