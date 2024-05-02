@@ -57,7 +57,7 @@ const elbv2 = new ElasticLoadBalancingV2Client([
     region: "ap-south-1",
     credentials: {
       accessKeyId: process.env.AWS_ACCESS_KEY_NEW!,
-      secret: process.env.AWS_SECRET!,
+      secretAccessKey: process.env.AWS_SECRET!,
     },
   },
 ]);
@@ -67,7 +67,7 @@ const route53 = new Route53Client([
     region: "ap-south-1",
     credentials: {
       accessKeyId: process.env.AWS_ACCESS_KEY_NEW!,
-      secret: process.env.AWS_SECRET!,
+      secretAccessKey: process.env.AWS_SECRET!,
     },
   },
 ]);
