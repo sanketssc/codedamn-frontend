@@ -5,7 +5,7 @@ import { io, Socket } from "socket.io-client";
 import { FileRepresentation } from "./Files";
 import { useRouter } from "next/navigation";
 import { ITerminalOptions, Terminal } from "@xterm/xterm";
-import SplitPane, { Pane } from "split-pane-react";
+import SplitPane, { Pane, SashContent } from "split-pane-react";
 import "./styles.css";
 
 import "@xterm/xterm/css/xterm.css";
@@ -204,7 +204,14 @@ export default function ProjectPage({
 
   return (
     <div className="w-screen h-screen bg-neutral-800 max-h-screen">
-      <SplitPane className="flex gap-20" sizes={sizes} onChange={setSizes}>
+      <SplitPane
+        sashRender={(_, active) => (
+          <SashContent active={active} type="vscode" />
+        )}
+        className="flex gap-20"
+        sizes={sizes}
+        onChange={setSizes}
+      >
         <Pane className="p-1 w-full h-full">
           <>
             {files.length > 0 && (
@@ -226,6 +233,9 @@ export default function ProjectPage({
         <Pane className="p-1">
           <div className="w-full h-screen">
             <SplitPane
+              sashRender={(_, active) => (
+                <SashContent active={active} type="vscode" />
+              )}
               className="flex gap-20"
               split="horizontal"
               sizes={verticalSizes}
