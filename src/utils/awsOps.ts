@@ -311,8 +311,14 @@ async function setupRouting(
   console.log(process.env.IMAGE_URL);
   console.log(process.env.HOSTED_ZONE_ID);
 
-  const targetGroup1Arn = await createTargetGroup("target-group-1", 5000);
-  const targetGroup2Arn = await createTargetGroup("target-group-2", 3000);
+  const targetGroup1Arn = await createTargetGroup(
+    `${projectid}-target-group-1`,
+    5000
+  );
+  const targetGroup2Arn = await createTargetGroup(
+    `${projectid}-target-group-2`,
+    3000
+  );
   if (!targetGroup1Arn || !targetGroup2Arn) {
     return;
   }
