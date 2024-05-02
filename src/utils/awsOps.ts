@@ -292,6 +292,19 @@ async function setupRouting(
   template: string
 ) {
   // // Create target groups for each service
+
+  console.log(process.env.AWS_ACCESS_KEY_NEW);
+  console.log(process.env.AWS_SECRET);
+  console.log(process.env.VPC_ID);
+  console.log(process.env.SUBNET_1);
+  console.log(process.env.SUBNET_2);
+  console.log(process.env.SUBNET_3);
+  console.log(process.env.SECURITY_GROUP);
+  console.log(process.env.EXECUTION_ROLE_ARN);
+  console.log(process.env.LB_DOMAIN);
+  console.log(process.env.IMAGE_URL);
+  console.log(process.env.HOSTED_ZONE_ID);
+
   const targetGroup1Arn = await createTargetGroup("target-group-1", 5000);
   const targetGroup2Arn = await createTargetGroup("target-group-2", 3000);
   if (!targetGroup1Arn || !targetGroup2Arn) {
