@@ -1,36 +1,15 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Codedamn frontend playground 
 
-## Getting Started
+This repo contains code for code editor playground.
 
-First, run the development server:
+### base image repo
+[github url](https://github.com/sanketssc/base-image-code-editor)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Demo video
+[part1](https://www.loom.com/share/cb08150867cd430db948cbc51f411f2c?sid=38c3b79d-3b5f-4ab8-a17a-fb0e4932dde8)
+[part2](https://www.loom.com/share/0a9c9c1a1fbd4dd99d4406ed796fd557?sid=e9f09906-031d-475d-b248-ec1f47eb30f6)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### architecture
+![backend image architecture](https://github.com/user-attachments/assets/56fa6ab9-9702-4013-924f-04ba1b1adf04)
+![overall architecture](https://github.com/user-attachments/assets/331b703b-8dbe-4e0a-a855-850766f8e70e)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
